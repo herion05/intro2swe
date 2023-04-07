@@ -36,6 +36,21 @@ double squareRoot(double num1){
   return res;
 }
 
+double calcAverage(){
+  int num, sum = 0, iterations = 0;
+  double average;
+  printf("Enter a series of numbers whose average you want to calculate\n");
+  printf("Enter 0 to stop the calculation\n");
+  printf("------------------------------------------------------------------\n");
+  scanf("%d", &num);
+  while(num != 0){
+    sum += num;
+    iterations++;
+    scanf("%d", &num);
+  }
+  return average = (double)sum / iterations;
+}
+
 int main(){
   char operator;
   double num1, num2, result;
@@ -47,6 +62,7 @@ int main(){
   printf("MODULUS '%c'\n", 37);
   printf("POWER '^'\n");
   printf("SQUARE ROOT 's'\n");
+  printf("AVERAGE 'a'\n");
   scanf("%c", &operator);
   printf("---------------------------\n");
   switch(operator){
@@ -86,6 +102,8 @@ int main(){
       scanf("%lf", &num1);
       result = squareRoot(num1);
       break;
+    case 'a':
+      result = calcAverage();
   }
   printf("%.3lf", result);
 }
